@@ -59,7 +59,7 @@
 	p {
 		/* Break long words when they would overflow */
 		overflow-wrap: break-word;
-		hyphens: auto;
+		/*hyphens: auto;*/
 	}
 
 	ol[role='list'],

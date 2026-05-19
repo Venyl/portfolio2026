@@ -34,6 +34,8 @@
 		"vite": "^8.0.7"
 	},
 	"dependencies": {
+		"@inlang/paraglide-js-svelte": "^1.0.2",
+		"arktype": "^2.2.0",
 		"open-props": "^1.7.23"
 	}
 }

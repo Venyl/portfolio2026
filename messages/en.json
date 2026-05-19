@@ -1,4 +1,23 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from en!"
+	"page_title": "Dawid Gajewski-Glugla | Full-Stack Developer",
+	"contact_me": "Contact me",
+	"contact_me2": "Get in touch",
+
+	"header_about": "About me",
+	"header_projects": "Projects",
+	"header_skills": "Technologies",
+	"header_contact": "Contact",
+	"header_theme": "Change theme to",
+	"header_theme_light": "light",
+	"header_theme_dark": "dark",
+	"header_lang": "Change language to polish (polski)",
+
+	"hero_greeting": "Hello, my name is",
+	"hero_my_name": "David",
+	"hero_short_about": "I'm a full-stack developer based in Poland with over {#b}6 years{/b} of experience.",
+
+	"hero_about_title": "About me",
+	"hero_about_filename": "about-me.txt",
+	"hero_about_content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem unde quo a accusantium explicabo ipsam at laboriosam itaque necessitatibus blanditiis porro quis numquam, inventore veniam minus, odit deserunt voluptatibus sunt!"
 }

@@ -1,6 +1,12 @@
 import type { Handle } from '@sveltejs/kit';
 import { getTextDirection } from '$lib/paraglide/runtime';
 import { paraglideMiddleware } from '$lib/paraglide/server';
+import { sequence } from '@sveltejs/kit/hooks';
+
+const handleTheme: Handle = ({ event, resolve }) => {
+	const theme = event.cookies.get('theme') ?? 'dark';
+	return resolve(event, { transformPageChunk: ({ html }) => html.replace('%theme%', theme) });
+};
 
 const handleParaglide: Handle = ({ event, resolve }) =>
 	paraglideMiddleware(event.request, ({ request, locale }) => {
@@ -14,4 +20,4 @@ const handleParaglide: Handle = ({ event, resolve }) =>
 		});
 	});
 
-export const handle: Handle = handleParaglide;
+export const handle: Handle = sequence(handleTheme, handleParaglide);

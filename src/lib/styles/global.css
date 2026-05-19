@@ -1,14 +1,156 @@
 @import 'open-props/style';
 @import 'open-props/palette';
 
-:root {
+html {
+	color-scheme: dark;
 	--palette-hue: 280;
 	--palette-hue-rotate-by: 1;
-	--palette-chroma: 0.06;
+	--palette-chroma: 0.07;
+
+	--neutral-1: var(--color-1);
+	--neutral-2: var(--color-2);
+	--neutral-3: var(--color-3);
+	--neutral-4: var(--color-4);
+	--neutral-5: var(--color-5);
+	--neutral-6: var(--color-6);
+	--neutral-7: var(--color-7);
+	--neutral-8: var(--color-8);
+	--neutral-9: var(--color-9);
+	--neutral-10: var(--color-10);
+	--neutral-11: var(--color-11);
+	--neutral-12: var(--color-12);
+	--neutral-13: var(--color-13);
+	--neutral-14: var(--color-14);
+	--neutral-15: var(--color-15);
+	--neutral-16: var(--color-16);
+
+	@supports (color: light-dark(black, white)) {
+		--neutral-1: light-dark(var(--color-16), var(--color-1));
+		--neutral-2: light-dark(var(--color-15), var(--color-2));
+		--neutral-3: light-dark(var(--color-14), var(--color-3));
+		--neutral-4: light-dark(var(--color-13), var(--color-4));
+		--neutral-5: light-dark(var(--color-12), var(--color-5));
+		--neutral-6: light-dark(var(--color-11), var(--color-6));
+		--neutral-7: light-dark(var(--color-10), var(--color-7));
+		--neutral-8: light-dark(var(--color-9), var(--color-8));
+		--neutral-9: light-dark(var(--color-8), var(--color-9));
+		--neutral-10: light-dark(var(--color-7), var(--color-10));
+		--neutral-11: light-dark(var(--color-6), var(--color-11));
+		--neutral-12: light-dark(var(--color-5), var(--color-12));
+		--neutral-13: light-dark(var(--color-4), var(--color-13));
+		--neutral-14: light-dark(var(--color-3), var(--color-14));
+		--neutral-15: light-dark(var(--color-2), var(--color-15));
+		--neutral-16: light-dark(var(--color-1), var(--color-16));
+	}
+
+	--border: 1px solid var(--neutral-13);
+	--font-mono: Geist Mono, monospace;
+
+	&[data-theme='dark'] {
+		color-scheme: dark;
+	}
+
+	&[data-theme='light'] {
+		color-scheme: light;
+	}
+}
+
+::selection {
+	background-color: var(--teal-6);
+	color: var(--neutral-14);
 }
 
 body {
-	background-color: var(--color-14);
-	color: var(--color-3);
+	background-color: var(--neutral-14);
+	color: var(--neutral-3);
 	font-family: Geist, sans-serif;
+}
+
+.container {
+	--margin: 1rem;
+	width: min(100% - (var(--margin) * 2), 1280px);
+	margin-inline: auto;
+
+	@media (width < 800px) {
+		--margin: 0;
+	}
+}
+
+.btn-primary,
+.btn-ghost {
+	min-width: fit-content;
+	display: flex;
+	align-items: center;
+	gap: 0.5ch;
+	text-decoration: none;
+	font-weight: 500;
+	padding: 0.375rem 0.625rem;
+	border-radius: 0.375rem;
+	transition:
+		color 200ms,
+		background-color 200ms,
+		border-color 200ms;
+
+	background-color: var(--clr-bg);
+	color: var(--clr-text);
+	border: 1px solid var(--clr-border);
+
+	&:hover {
+		background-color: var(--clr-bg-hover);
+		border-color: var(--clr-border-hover);
+	}
+
+	&:active {
+		background-color: var(--clr-bg-active);
+		border-color: var(--clr-border-active);
+	}
+}
+
+.btn-primary {
+	--clr-text: var(--color-14);
+
+	--clr-bg: var(--teal-3);
+	--clr-bg-hover: var(--teal-5);
+	--clr-bg-active: var(--teal-7);
+
+	@supports (color: light-dark(black, white)) {
+		--clr-bg: light-dark(var(--teal-3), var(--teal-3));
+		--clr-bg-hover: light-dark(var(--teal-4), var(--teal-7));
+		--clr-bg-active: light-dark(var(--teal-5), var(--teal-7));
+	}
+
+	--clr-border: var(--clr-bg);
+	--clr-border-hover: var(--clr-bg-hover);
+	--clr-border-active: var(--clr-bg-active);
+}
+
+.btn-ghost {
+	--clr-text: var(--neutral-3);
+
+	--clr-bg: transparent;
+	--clr-bg-hover: #ffffff11;
+	--clr-bg-active: #ffffff22;
+
+	@supports (color: light-dark(black, white)) {
+		--clr-bg-hover: light-dark(#00000011, #ffffff11);
+		--clr-bg-active: light-dark(#00000022, #ffffff22);
+	}
+
+	--clr-border: var(--neutral-12);
+	--clr-border-hover: var(--clr-border);
+	--clr-border-active: var(--clr-border);
+}
+
+.btn-no-border {
+	--clr-border: transparent;
+	--clr-border-hover: transparent;
+}
+
+.sr-only {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
 }
