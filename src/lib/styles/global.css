@@ -2,6 +2,7 @@
 @import 'open-props/palette';
 
 html {
+	scroll-padding-top: 5rem;
 	color-scheme: dark;
 	--palette-hue: 280;
 	--palette-hue-rotate-by: 1;
@@ -24,25 +25,6 @@ html {
 	--neutral-15: var(--color-15);
 	--neutral-16: var(--color-16);
 
-	@supports (color: light-dark(black, white)) {
-		--neutral-1: light-dark(var(--color-16), var(--color-1));
-		--neutral-2: light-dark(var(--color-15), var(--color-2));
-		--neutral-3: light-dark(var(--color-14), var(--color-3));
-		--neutral-4: light-dark(var(--color-13), var(--color-4));
-		--neutral-5: light-dark(var(--color-12), var(--color-5));
-		--neutral-6: light-dark(var(--color-11), var(--color-6));
-		--neutral-7: light-dark(var(--color-10), var(--color-7));
-		--neutral-8: light-dark(var(--color-9), var(--color-8));
-		--neutral-9: light-dark(var(--color-8), var(--color-9));
-		--neutral-10: light-dark(var(--color-7), var(--color-10));
-		--neutral-11: light-dark(var(--color-6), var(--color-11));
-		--neutral-12: light-dark(var(--color-5), var(--color-12));
-		--neutral-13: light-dark(var(--color-4), var(--color-13));
-		--neutral-14: light-dark(var(--color-3), var(--color-14));
-		--neutral-15: light-dark(var(--color-2), var(--color-15));
-		--neutral-16: light-dark(var(--color-1), var(--color-16));
-	}
-
 	--border: 1px solid var(--neutral-13);
 	--font-mono: Geist Mono, monospace;
 
@@ -52,6 +34,22 @@ html {
 
 	&[data-theme='light'] {
 		color-scheme: light;
+		--neutral-1: var(--color-16);
+		--neutral-2: var(--color-15);
+		--neutral-3: var(--color-14);
+		--neutral-4: var(--color-13);
+		--neutral-5: var(--color-12);
+		--neutral-6: var(--color-11);
+		--neutral-7: var(--color-10);
+		--neutral-8: var(--color-9);
+		--neutral-9: var(--color-8);
+		--neutral-10: var(--color-7);
+		--neutral-11: var(--color-6);
+		--neutral-12: var(--color-5);
+		--neutral-13: var(--color-4);
+		--neutral-14: var(--color-3);
+		--neutral-15: var(--color-2);
+		--neutral-16: var(--color-1);
 	}
 }
 
@@ -113,15 +111,15 @@ body {
 	--clr-bg-hover: var(--teal-5);
 	--clr-bg-active: var(--teal-7);
 
-	@supports (color: light-dark(black, white)) {
-		--clr-bg: light-dark(var(--teal-3), var(--teal-3));
-		--clr-bg-hover: light-dark(var(--teal-4), var(--teal-7));
-		--clr-bg-active: light-dark(var(--teal-5), var(--teal-7));
-	}
-
 	--clr-border: var(--clr-bg);
 	--clr-border-hover: var(--clr-bg-hover);
 	--clr-border-active: var(--clr-bg-active);
+}
+
+html[data-theme='light'] .btn-primary {
+	--clr-bg: var(--teal-3);
+	--clr-bg-hover: var(--teal-4);
+	--clr-bg-active: var(--teal-5);
 }
 
 .btn-ghost {
@@ -131,14 +129,14 @@ body {
 	--clr-bg-hover: #ffffff11;
 	--clr-bg-active: #ffffff22;
 
-	@supports (color: light-dark(black, white)) {
-		--clr-bg-hover: light-dark(#00000011, #ffffff11);
-		--clr-bg-active: light-dark(#00000022, #ffffff22);
-	}
-
 	--clr-border: var(--neutral-12);
 	--clr-border-hover: var(--clr-border);
 	--clr-border-active: var(--clr-border);
+}
+
+html[data-theme='light'] .btn-ghost {
+	--clr-bg-hover: #00000011;
+	--clr-bg-active: #00000022;
 }
 
 .btn-no-border {
@@ -153,4 +151,46 @@ body {
 	width: 1px;
 	height: 1px;
 	overflow: hidden;
+}
+
+.dot-bg {
+	--dot-size: 0.0625rem;
+	--dot-spacing: 1.25rem;
+	--fade-out-start: 40%;
+	background-image:
+		radial-gradient(ellipse at center, transparent, var(--neutral-14) var(--fade-out-start)),
+		radial-gradient(circle at center, var(--neutral-12) var(--dot-size), transparent 0);
+	background-size:
+		125% 150%,
+		var(--dot-spacing) var(--dot-spacing);
+	background-position: center, center;
+	background-repeat: no-repeat, repeat;
+}
+
+.slashed-bg {
+	--spacing: 0.25rem;
+	background-image: repeating-linear-gradient(
+		-45deg,
+		transparent,
+		transparent var(--spacing),
+		var(--neutral-13) var(--spacing),
+		var(--neutral-13) calc(var(--spacing) + 1px)
+	);
+}
+
+.grid-bg {
+	--spacing: 2rem;
+	background-image:
+		radial-gradient(ellipse at center, transparent, var(--neutral-14) 30%),
+		repeating-linear-gradient(
+			90deg,
+			var(--neutral-13),
+			transparent 1px,
+			transparent var(--spacing)
+		),
+		repeating-linear-gradient(var(--neutral-13), transparent 1px, transparent var(--spacing));
+	background-size:
+		200% 200%,
+		auto;
+	background-position: center;
 }

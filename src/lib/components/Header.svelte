@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { slugify } from '$lib';
 	import { m } from '$lib/paraglide/messages.js';
 	import { getLocale, setLocale } from '$lib/paraglide/runtime';
 	import { setTheme } from '$lib/remote/theme.remote';
@@ -27,10 +28,10 @@
 	<div class="container">
 		<nav>
 			<ul>
-				<li>{m.header_about()}</li>
-				<li>{m.header_projects()}</li>
-				<li>{m.header_skills()}</li>
-				<li>{m.header_contact()}</li>
+				<li><a href={`#${slugify(m.header_about())}`}>{m.header_about()}</a></li>
+				<li><a href={`#${slugify(m.header_projects())}`}>{m.header_projects()}</a></li>
+				<li><a href={`#${slugify(m.header_skills())}`}>{m.header_skills()}</a></li>
+				<li><a href={`#${slugify(m.header_contact())}`}>{m.header_contact()}</a></li>
 			</ul>
 		</nav>
 
@@ -114,6 +115,10 @@
 
 <style>
 	header {
+		position: sticky;
+		top: 0;
+		background-color: var(--neutral-14);
+		z-index: 1;
 		height: 4rem;
 		border-bottom: var(--border);
 
@@ -142,6 +147,11 @@
 		&:hover {
 			color: var(--neutral-1);
 		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
 	}
 
 	.actions {
@@ -152,12 +162,6 @@
 		button {
 			align-self: stretch;
 			padding: 0.375rem;
-		}
-	}
-
-	@supports not (color: light-dark(black, white)) {
-		.theme-switcher {
-			display: none;
 		}
 	}
 

@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { slugify } from '$lib';
 	import { m } from '$lib/paraglide/messages.js';
 	import { ParaglideMessage } from '@inlang/paraglide-js-svelte';
 </script>
 
-<div class="hero">
+<div class="hero" id={slugify(m.header_about())}>
 	<div class="greeting-container">
 		<div class="greeting">{m.hero_greeting()} <span>{m.hero_my_name()}</span></div>
 		<p class="short-about">
