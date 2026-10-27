@@ -65,6 +65,7 @@ body {
 }
 
 .container {
+	background-color: var(--neutral-14);
 	--margin: 1rem;
 	width: min(100% - (var(--margin) * 2), 1280px);
 	margin-inline: auto;
@@ -83,7 +84,7 @@ body {
 	text-decoration: none;
 	font-weight: 500;
 	padding: 0.375rem 0.625rem;
-	border-radius: 0.375rem;
+	border-radius: 0.25rem;
 	transition:
 		color 200ms,
 		background-color 200ms,
@@ -130,8 +131,8 @@ html[data-theme='light'] .btn-primary {
 	--clr-bg-active: #ffffff22;
 
 	--clr-border: var(--neutral-12);
-	--clr-border-hover: var(--clr-border);
-	--clr-border-active: var(--clr-border);
+	--clr-border-hover: var(--neutral-13);
+	--clr-border-active: var(--clr-border-hover);
 }
 
 html[data-theme='light'] .btn-ghost {
@@ -155,14 +156,15 @@ html[data-theme='light'] .btn-ghost {
 
 .dot-bg {
 	--dot-size: 0.0625rem;
-	--dot-spacing: 1.25rem;
+	--spacing: 1.25rem;
 	--fade-out-start: 40%;
+	--dot-color: var(--neutral-12);
 	background-image:
 		radial-gradient(ellipse at center, transparent, var(--neutral-14) var(--fade-out-start)),
-		radial-gradient(circle at center, var(--neutral-12) var(--dot-size), transparent 0);
+		radial-gradient(circle at center, var(--dot-color) var(--dot-size), transparent 0);
 	background-size:
 		125% 150%,
-		var(--dot-spacing) var(--dot-spacing);
+		var(--spacing) var(--spacing);
 	background-position: center, center;
 	background-repeat: no-repeat, repeat;
 }
@@ -180,8 +182,9 @@ html[data-theme='light'] .btn-ghost {
 
 .grid-bg {
 	--spacing: 2rem;
+	--fade-out-start: 30%;
 	background-image:
-		radial-gradient(ellipse at center, transparent, var(--neutral-14) 30%),
+		radial-gradient(ellipse at center, transparent, var(--neutral-14) var(--fade-out-start)),
 		repeating-linear-gradient(
 			90deg,
 			var(--neutral-13),
@@ -193,4 +196,12 @@ html[data-theme='light'] .btn-ghost {
 		200% 200%,
 		auto;
 	background-position: center;
+}
+
+h2 {
+	font-family: var(--font-mono);
+	text-align: center;
+	margin-bottom: 2rem;
+	font-size: 2.5rem;
+	font-weight: 700;
 }

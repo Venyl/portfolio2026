@@ -2,25 +2,45 @@
 	import Project from './Project.svelte';
 	import { m } from '$lib/paraglide/messages.js';
 	import { slugify } from '$lib';
+	import goodlife from '$lib/assets/projects/goodlife.jpg';
+	import gamebox from '$lib/assets/projects/gamebox.jpg';
+	import pocketdex from '$lib/assets/projects/pocketdex.jpg';
+	import paletteGenerator from '$lib/assets/projects/palette-generator.jpg';
 </script>
 
 <h2 id={slugify(m.header_projects())}>{m.header_projects()}</h2>
 <div class="grid grid-bg">
-	<Project />
-	<Project />
-	<Project />
-	<Project />
+	<Project
+		thumbnail={goodlife}
+		name="GoodLife"
+		tag={m.project_goodlife_tag()}
+		description={m.project_goodlife_desc()}
+		repo="https://github.com/Venyl"
+	/>
+	<Project
+		thumbnail={pocketdex}
+		name="PocketDex"
+		tag={m.project_pocketdex_tag()}
+		description={m.project_pocketdex_desc()}
+		repo="https://github.com/Venyl/er-pocketdex"
+	/>
+	<Project
+		thumbnail={paletteGenerator}
+		name={m.project_palette_name()}
+		tag={m.project_palette_tag()}
+		description={m.project_palette_desc()}
+		repo="https://github.com/Venyl/dynamic-palette-generator"
+	/>
+	<Project
+		thumbnail={gamebox}
+		name="GameBox"
+		tag={m.project_gamebox_tag()}
+		description={m.project_gamebox_desc()}
+		repo="https://github.com/Venyl"
+	/>
 </div>
 
 <style>
-	h2 {
-		font-family: var(--font-mono);
-		text-align: center;
-		margin-bottom: 1.5rem;
-		font-size: 2.5rem;
-		font-weight: 700;
-	}
-
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));

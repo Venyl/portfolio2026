@@ -10,12 +10,14 @@
 		<p class="short-about">
 			<ParaglideMessage message={m.hero_short_about} inputs={{}}>
 				{#snippet b({ children })}
-					<span>{@render children?.()}</span>
+					<span style:font-weight="700" style:text-decoration="underline"
+						>{@render children?.()}</span
+					>
 				{/snippet}
 			</ParaglideMessage>
 		</p>
 		<div class="buttons">
-			<a class="btn-primary" href="mailto:dawid.gg13@gmail.com">
+			<a class="btn-primary" href="mailto:dawid.gg13+portfolio@gmail.com">
 				<svg xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 24 24">
 					<path d="M0 0h24v24H0z" fill="none" />
 					<g
@@ -169,6 +171,9 @@
 			gap: 1rem;
 
 			h2 {
+				font-size: inherit;
+				margin: initial;
+				font-weight: 400;
 				display: flex;
 				box-sizing: content-box;
 				background-color: var(--neutral-14);

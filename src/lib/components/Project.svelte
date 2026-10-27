@@ -1,21 +1,30 @@
 <script lang="ts">
-	import appwrite from '$lib/assets/projects/appwrite.jpg';
 	import { m } from '$lib/paraglide/messages';
+
+	type Props = {
+		thumbnail: string;
+		name: string;
+		tag: string;
+		description: string;
+		repo: string;
+	};
+
+	const { thumbnail, name, tag, description, repo }: Props = $props();
 </script>
 
 <section>
 	<div class="img-wrapper slashed-bg">
-		<img src={appwrite} alt="appwrite" />
+		<img src={thumbnail} alt="{name} thumbnail" />
 	</div>
 	<div class="body">
 		<header>
-			<h3>Appwrite</h3>
-			<span>SaaS</span>
+			<h3>{name}</h3>
+			<span>{tag}</span>
 		</header>
-		<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet, perspiciatis.</p>
+		<p>{description}</p>
 		<footer>
-			<button class="btn-ghost">Visit website</button>
-			<a href="https://github.com/Venyl" title={m.source_code()} class="btn-ghost"
+			<button class="btn-ghost">{m.project_visit()}</button>
+			<a href={repo} title={m.source_code()} rel="external" class="btn-ghost"
 				><svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" viewBox="0 0 32 32">
 					<path d="M0 0h32v32H0z" fill="none" />
 					<path
@@ -55,6 +64,9 @@
 
 		img {
 			border: 1px solid var(--neutral-13);
+			aspect-ratio: 1.84;
+			object-fit: cover;
+			object-position: center;
 		}
 	}
 
@@ -80,7 +92,7 @@
 	span {
 		font-family: var(--font-mono);
 		min-width: max-content;
-		border-radius: 0.375rem;
+		border-radius: 0.25rem;
 		font-size: 0.75rem;
 		padding: 0 0.5em;
 		color: var(--teal-1);

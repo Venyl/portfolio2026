@@ -16,9 +16,23 @@
 
 	"hero_greeting": "Hello, my name is",
 	"hero_my_name": "David",
-	"hero_short_about": "I'm a full-stack developer based in Poland with over {#b}6 years{/b} of experience.",
+	"hero_short_about": "I'm a full-stack developer based in Poland with over {#b}7 years{/b} of experience.",
 
 	"hero_about_title": "About me",
 	"hero_about_filename": "about-me.txt",
-	"hero_about_content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem unde quo a accusantium explicabo ipsam at laboriosam itaque necessitatibus blanditiis porro quis numquam, inventore veniam minus, odit deserunt voluptatibus sunt!"
+	"hero_about_content": "Programming is my passion. I strive to improve my interpersonal, logical and programming skills with each day. While making projects I prioritise performance, responsiveness, code readability and maintainability. My other interests include cooking and bodybuilding.",
+
+	"project_gamebox_tag": "Fun",
+	"project_gamebox_desc": "A fun website where you can play four popular browser games. Features client-side routing and state-driven reactivity.",
+	"project_pocketdex_tag": "Tool",
+	"project_pocketdex_desc": "An online Pokedex for Pokemon Elite Redux. Features advanced search filters, pagination, Popover API and discrete transitions. ",
+	"project_palette_name": "Palette Generator",
+	"project_palette_tag": "Tool",
+	"project_palette_desc": "A dynamic palette generator. Features a custom CSS variable powered algorithm, custom toasts and CSS variable exporting.",
+	"project_goodlife_tag": "Business",
+	"project_goodlife_desc": "A landing page for a client company. Features fully responsive UI, media & SEO optimization and Google Maps integration.",
+
+	"project_visit": "Visit website",
+
+	"contact_location": "Złotów, Poland"
 }

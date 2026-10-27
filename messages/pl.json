@@ -16,9 +16,23 @@
 
 	"hero_greeting": "Cześć, mam na imię",
 	"hero_my_name": "Dawid",
-	"hero_short_about": "Jestem programistą full-stack z Polski, który posiada ponad {#b}6 lat{/b} doświadczenia.",
+	"hero_short_about": "Jestem programistą full-stack z Polski, który posiada ponad {#b}7 lat{/b} doświadczenia.",
 
 	"hero_about_title": "O mnie",
 	"hero_about_filename": "o-mnie.txt",
-	"hero_about_content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem unde quo a accusantium explicabo ipsam at laboriosam itaque necessitatibus blanditiis porro quis numquam, inventore veniam minus, odit deserunt voluptatibus sunt!"
+	"hero_about_content": "Programowanie jest moją pasją. Stale rozwijam swoje umiejętności interpersonalne, logiczne i programistyczne. Tworząc projekty priorytetowo traktuję wydajność, responsywność i czytelność kodu. Interesuję się również gotowaniem oraz kulturystyką.",
+
+	"project_gamebox_tag": "Gra",
+	"project_gamebox_desc": "Rozrywkowa strona z czterema popularnymi grami przeglądarkowymi. Zawiera client-side routing i state-driven reactivity.",
+	"project_pocketdex_tag": "Narzędzie",
+	"project_pocketdex_desc": "Internetowy Pokedex dla gry Pokemon Elite Redux. Zawiera zaawansowane filtrowanie, paginację, Popover API i discrete transitions. ",
+	"project_palette_name": "Generator Palet",
+	"project_palette_tag": "Narzędzie",
+	"project_palette_desc": "Dynamiczny generator palet. Zawiera specjalny algorytm zasilany zmiennymi CSS, własne powiadomienia toast i eksportowanie kodu CSS.",
+	"project_goodlife_tag": "Biznes",
+	"project_goodlife_desc": "Strona wizytówkowa dla firmy klienta. Zawiera responsywne UI, optymizacje mediów i SEO oraz integrację z Google Maps.",
+
+	"project_visit": "Odwiedź stronę",
+
+	"contact_location": "Złotów, Polska"
 }
