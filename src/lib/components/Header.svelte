@@ -26,11 +26,42 @@
 
 <header>
 	<div class="container">
-		<nav>
+		<nav class="desktop-nav">
 			<ul>
 				<li><a href={`#${slugify(m.header_about())}`}>{m.header_about()}</a></li>
 				<li><a href={`#${slugify(m.header_projects())}`}>{m.header_projects()}</a></li>
 				<li><a href={`#${slugify(m.header_skills())}`}>{m.header_skills()}</a></li>
+				<li><a href={`#${slugify(m.header_contact())}`}>{m.header_contact()}</a></li>
+			</ul>
+		</nav>
+
+		<button
+			class="mobile-nav-btn btn-ghost btn-no-border"
+			title={m.header_nav()}
+			popovertarget="mobile-nav"
+			popovertargetaction="toggle"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
+				<path d="M0 0h24v24H0z" fill="none" />
+				<path
+					fill="none"
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M4 6h16M4 12h16M4 18h16"
+				/>
+			</svg>
+		</button>
+
+		<nav class="mobile-nav" id="mobile-nav" popover>
+			<ul>
+				<li><a href={`#${slugify(m.header_about())}`}>{m.header_about()}</a></li>
+				<span class="dot"></span>
+				<li><a href={`#${slugify(m.header_projects())}`}>{m.header_projects()}</a></li>
+				<span class="dot"></span>
+				<li><a href={`#${slugify(m.header_skills())}`}>{m.header_skills()}</a></li>
+				<span class="dot"></span>
 				<li><a href={`#${slugify(m.header_contact())}`}>{m.header_contact()}</a></li>
 			</ul>
 		</nav>
@@ -174,6 +205,71 @@
 	:global(html[data-theme='light']) {
 		.btn-moon {
 			display: none;
+		}
+	}
+
+	.mobile-nav-btn {
+		anchor-name: --mobile-nav;
+		display: none;
+
+		svg {
+			translate: 0 0.0625rem;
+		}
+	}
+
+	.mobile-nav {
+		display: none;
+		position: fixed;
+		position-anchor: --mobile-nav;
+		left: anchor(left);
+		top: calc(anchor(bottom) + 0.5rem);
+		padding: 1rem;
+		border: 1px solid var(--neutral-12);
+		background-color: var(--neutral-14);
+
+		ul {
+			/*flex-direction: column;*/
+			gap: 1rem;
+
+			> div {
+				display: flex;
+				gap: 1rem;
+			}
+		}
+
+		.dot {
+			align-self: center;
+			width: 0.25rem;
+			aspect-ratio: 1;
+			background-color: var(--teal-4);
+		}
+	}
+
+	@media (width < 800px) {
+		.desktop-nav {
+			display: none;
+		}
+
+		.mobile-nav-btn {
+			display: block;
+		}
+
+		.mobile-nav {
+			display: revert;
+		}
+	}
+
+	@media (width < 500px) {
+		header .container {
+			padding: 1rem;
+		}
+
+		.mobile-nav ul {
+			flex-direction: column;
+
+			.dot {
+				display: none;
+			}
 		}
 	}
 </style>
