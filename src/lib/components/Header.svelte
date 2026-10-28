@@ -125,7 +125,12 @@
 			</button>
 
 			<a href="mailto:dawid.gg13+portfolio@gmail.com" class="btn-primary">
-				<svg xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 24 24">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="1.125em"
+					height="1.125em"
+					viewBox="0 0 24 24"
+				>
 					<path d="M0 0h24v24H0z" fill="none" />
 					<g
 						fill="none"

@@ -24,8 +24,24 @@
 		</header>
 		<p>{description}</p>
 		<footer>
-			<a href={url} rel="external" class="btn-ghost">{m.project_visit()}</a>
-			<a href={repo} title={m.source_code()} rel="external" class="btn-ghost"
+			<a href={url} rel="external" class="visit-btn btn-ghost">
+				<svg xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 24 24">
+					<path d="M0 0h24v24H0z" fill="none" />
+					<g
+						fill="none"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+					>
+						<path d="M15 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-2" />
+						<path d="M21 12H8l3-3m0 6l-3-3" />
+					</g>
+				</svg>
+
+				{m.project_visit()}
+			</a>
+			<a href={repo} title={m.source_code()} rel="external" class="source-link btn-ghost"
 				><svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" viewBox="0 0 32 32">
 					<path d="M0 0h32v32H0z" fill="none" />
 					<path
@@ -117,7 +133,11 @@
 		justify-content: space-between;
 	}
 
-	a {
+	/*.visit-btn {
+	display: flex;
+	}*/
+
+	.source-link {
 		padding: 0.25rem;
 		color: inherit;
 		border: none;
