@@ -15,6 +15,7 @@
 		name="GoodLife"
 		tag={m.project_goodlife_tag()}
 		description={m.project_goodlife_desc()}
+		url="https://goodlifedogretreat.ca/"
 		repo="https://github.com/Venyl"
 	/>
 	<Project
@@ -22,6 +23,7 @@
 		name="PocketDex"
 		tag={m.project_pocketdex_tag()}
 		description={m.project_pocketdex_desc()}
+		url="https://venyl.github.io/er-pocketdex/"
 		repo="https://github.com/Venyl/er-pocketdex"
 	/>
 	<Project
@@ -29,6 +31,7 @@
 		name={m.project_palette_name()}
 		tag={m.project_palette_tag()}
 		description={m.project_palette_desc()}
+		url="https://venyl.github.io/dynamic-palette-generator/"
 		repo="https://github.com/Venyl/dynamic-palette-generator"
 	/>
 	<Project
@@ -36,6 +39,7 @@
 		name="GameBox"
 		tag={m.project_gamebox_tag()}
 		description={m.project_gamebox_desc()}
+		url="https://venyl-gamebox.netlify.app/"
 		repo="https://github.com/Venyl"
 	/>
 </div>
