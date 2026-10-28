@@ -16,7 +16,7 @@
 
 	"hero_greeting": "Cześć, mam na imię",
 	"hero_my_name": "Dawid",
-	"hero_short_about": "Jestem programistą full-stack z Polski, który posiada ponad {#b}7 lat{/b} doświadczenia.",
+	"hero_short_about": "Jestem programistą full-stack z ponad {#b}7-letnim{/b} doświadczeniem.",
 
 	"hero_about_title": "O mnie",
 	"hero_about_filename": "o-mnie.txt",
