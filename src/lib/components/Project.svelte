@@ -6,15 +6,16 @@
 		name: string;
 		tag: string;
 		description: string;
+		url: string;
 		repo: string;
 	};
 
-	const { thumbnail, name, tag, description, repo }: Props = $props();
+	const { thumbnail, name, tag, description, url, repo }: Props = $props();
 </script>
 
 <section>
 	<div class="img-wrapper slashed-bg">
-		<img src={thumbnail} alt="{name} thumbnail" />
+		<img src={thumbnail} alt="{name} thumbnail" width="549" height="299" />
 	</div>
 	<div class="body">
 		<header>
@@ -23,7 +24,7 @@
 		</header>
 		<p>{description}</p>
 		<footer>
-			<button class="btn-ghost">{m.project_visit()}</button>
+			<a href={url} rel="external" class="btn-ghost">{m.project_visit()}</a>
 			<a href={repo} title={m.source_code()} rel="external" class="btn-ghost"
 				><svg xmlns="http://www.w3.org/2000/svg" width="1.75em" height="1.75em" viewBox="0 0 32 32">
 					<path d="M0 0h32v32H0z" fill="none" />
