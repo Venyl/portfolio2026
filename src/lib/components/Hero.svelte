@@ -10,9 +10,7 @@
 		<p class="short-about">
 			<ParaglideMessage message={m.hero_short_about} inputs={{}}>
 				{#snippet b({ children })}
-					<span style:font-weight="700" style:text-decoration="underline"
-						>{@render children?.()}</span
-					>
+					<span class="experience">{@render children?.()}</span>
 				{/snippet}
 			</ParaglideMessage>
 		</p>
@@ -146,6 +144,11 @@
 	.short-about {
 		color: var(--neutral-5);
 		max-width: 30ch;
+	}
+
+	.experience {
+		font-weight: 700;
+		word-break: keep-all;
 	}
 
 	.buttons {
