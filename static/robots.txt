@@ -3,7 +3,7 @@ User-agent: *
 Disallow:
 
 # ┌────────────────────────────┐
-# │ A strange game...         × │
+# │ A strange game...        × │
 # ├────────────────────────────┤
 # │ What is the winning move?  │
 # │                            │
