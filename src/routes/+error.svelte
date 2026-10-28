@@ -87,4 +87,8 @@
 		color: var(--teal-1);
 		text-decoration: none;
 	}
+
+	:global(html[data-theme='light']) a {
+		color: var(--teal-7);
+	}
 </style>
