@@ -148,7 +148,7 @@
 
 	.experience {
 		font-weight: 700;
-		word-break: keep-all;
+		white-space: nowrap;
 	}
 
 	.buttons {
